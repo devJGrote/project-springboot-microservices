@@ -5,6 +5,7 @@ import de.inosofttech.employeeservice.dto.DepartmentDto;
 import de.inosofttech.employeeservice.dto.EmployeeDto;
 import de.inosofttech.employeeservice.entity.Employee;
 import de.inosofttech.employeeservice.repository.EmployeeRepository;
+import de.inosofttech.employeeservice.service.APIClient;
 import de.inosofttech.employeeservice.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.apache.coyote.Response;
@@ -21,7 +22,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     //private RestTemplate restTemplate;
-    private WebClient webClient;
+    //private WebClient webClient;
+    private APIClient apiClient;
 
     @Override
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
@@ -56,11 +58,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         //
         //        DepartmentDto departmentDto = responseEntity.getBody();
 
-        DepartmentDto departmentDto = webClient.get()
-                .uri("http://localhost:8080/api/departments/" + employee.getDepartmentCode())
-                .retrieve()
-                .bodyToMono(DepartmentDto.class)
-                .block();
+        //        DepartmentDto departmentDto = webClient.get()
+        //                .uri("http://localhost:8080/api/departments/" + employee.getDepartmentCode())
+        //                .retrieve()
+        //                .bodyToMono(DepartmentDto.class)
+        //                .block();
+
+        DepartmentDto departmentDto = apiClient.getDepartment(employee.getDepartmentCode());
 
         EmployeeDto employeeDto = new EmployeeDto(
                 employee.getId(),
