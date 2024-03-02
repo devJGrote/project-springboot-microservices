@@ -26,6 +26,11 @@ GET http://localhost:9191/department-service/api/departments/IT001
 For the Department-Service application, use the 8080 port and for its instance, use port 8082
 java -jar -Dserver.port=8082 target/department-service-0.0.1-SNAPSHOT.jar
 java -jar -Dserver.port=8083 target/department-service-0.0.1-SNAPSHOT.jar
+GET http://localhost:8083/api/departments/IT001
+GET http://localhost:8080/message
+POST http://localhost:8080/actuator/refresh
+GET http://localhost:8080/actuator/info
+
 
 For the Employee-Service application, use the 8081 port.
 
