@@ -1,0 +1,30 @@
+@startuml
+
+node Client
+node "API Gateway" #FF0000
+node "Service Registry" #8B4513
+node "Employee Service" #FF69B4
+node "Department Service" #FF69B4
+node "Config Server" #008000
+node "DB department" #ADD8E6
+node "DB employee" #ADD8E6
+node "Message Broker" #FFA500
+
+
+Client --> "API Gateway" : Requests
+"API Gateway" --> "Service Registry" : Service Registration
+"API Gateway" --> "Employee Service" : ASK Requests
+"API Gateway" --> "Department Service" : ASK Requests
+"Config Server" --> "Service Registry" : Service Registration
+"Employee Service" --> "Service Registry" : Service Registration
+"Department Service" --> "Service Registry" : Service Registration
+"Department Service"  --> "Config Server" : Load Configuration
+"Employee Service"  --> "Config Server" : Load Configuration
+
+"Department Service"  --> "Message Broker" : Subscribe
+"Employee Service"  --> "Message Broker" : Subscribe
+
+"Employee Service" <-- "DB employee" : Data
+"Department Service" <-- "DB department" : Data
+
+@enduml
