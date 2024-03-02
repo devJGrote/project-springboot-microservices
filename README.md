@@ -28,11 +28,14 @@ java -jar -Dserver.port=8082 target/department-service-0.0.1-SNAPSHOT.jar
 java -jar -Dserver.port=8083 target/department-service-0.0.1-SNAPSHOT.jar
 GET http://localhost:8083/api/departments/IT001
 GET http://localhost:8080/message
+POST http://localhost:8080/actuator/busrefresh
 POST http://localhost:8080/actuator/refresh
 GET http://localhost:8080/actuator/info
 
 
 For the Employee-Service application, use the 8081 port.
+GET http://localhost:8081/users/message
+
 
 For the Config-Server application, use the 8888 port.
 

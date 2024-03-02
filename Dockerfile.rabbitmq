@@ -1,0 +1,14 @@
+# Use the official RabbitMQ image as a base
+FROM rabbitmq:3.9.9-management
+
+# Optional metadata
+LABEL maintainer="Your Name <email@domain.com>"
+
+# Add custom configuration files if necessary
+# COPY rabbitmq.conf /etc/rabbitmq/
+
+# Expose the default port for RabbitMQ (5672)
+EXPOSE 5672
+
+# Expose the management port for RabbitMQ (15672)
+EXPOSE 15672
