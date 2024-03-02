@@ -1,0 +1,8 @@
+# Use the official OpenZipkin's Zipkin base image
+FROM openzipkin/zipkin:latest
+
+# Optional metadata
+LABEL maintainer="Your Name <email@domain.com>"
+
+# Expose Zipkin default port
+EXPOSE 9411
