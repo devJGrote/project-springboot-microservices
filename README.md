@@ -13,6 +13,15 @@ https://spring.io/projects/spring-cloud
 
 
 For the API-Gateway application, use the 9191 port.
+Without Locater
+
+GET http://localhost:9191/api/employees/1
+GET http://localhost:9191/api/departments/IT001
+
+With Locater enabled
+
+GET http://localhost:9191/employee-service/api/employees/1
+GET http://localhost:9191/department-service/api/departments/IT001
 
 For the Department-Service application, use the 8080 port and for its instance, use port 8082
 java -jar -Dserver.port=8082 target/department-service-0.0.1-SNAPSHOT.jar
