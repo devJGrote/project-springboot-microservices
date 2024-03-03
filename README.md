@@ -12,6 +12,8 @@
 
 For the API-Gateway application, use port 9191.
 
+- Cors https://cloud.spring.io/spring-cloud-gateway/multi/multi__cors_configuration.html
+
 ### Without Locator
 
 - GET [http://localhost:9191/api/employees/1](http://localhost:9191/api/employees/1)
@@ -105,6 +107,71 @@ For the Organization-Service application, use port 8083.
 ## React-Frontend
 
 For the React-Frontend application, use port 3000.
+
+- http://localhost:3000/
+
+- Latest LTS Version: 20.11.1 (includes npm 10.2.4) https://nodejs.org/en/download
+- https://create-react-app.dev/docs/getting-started
+-  npx create-react-app react-frontend
+
+   cd my-app
+
+   npm start
+
+- npm start
+Starts the development server.
+
+- npm run build
+Bundles the app into static files for production.
+
+- npm test
+Starts the test runner.
+
+- npm run eject
+Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can’t go back!
+
+
+- install material ui
+npm install @mui/material @emotion/react @emotion/styled
+
+-install roboto font
+
+npm install @fontsource/roboto
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+/>
+
+- install icons 
+npm install @mui/icons-material
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+
+- install axios
+npm install axios --save
+
+- install in visual studio code
+"Reactjs code snippets"
+
+- rcc→	class component skeleton
+- rrc→	class component skeleton with react-redux connect
+- rrdc→	class component skeleton with react-redux connect and dispatch
+- rccp→	class component skeleton with prop types after the class
+- rcjc→	class component skeleton without import and default export lines
+- rcfc→	class component skeleton that contains all the lifecycle methods
+- rwwd→	class component without import statements
+- rpc→	class pure component skeleton with prop types after the class
 
 ## Zipkin Server
 

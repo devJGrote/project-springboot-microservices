@@ -1,6 +1,7 @@
 @startuml
 
-node Client
+node Person
+node "React App" as Client
 node "API Gateway" #FF0000
 node "Service Registry" #8B4513
 node "Employee Service" #FF69B4
@@ -10,7 +11,7 @@ node "DB department" #ADD8E6
 node "DB employee" #ADD8E6
 node "Message Broker" #FFA500
 
-
+Person --> "Client" : Use
 Client --> "API Gateway" : Requests
 "API Gateway" --> "Service Registry" : Service Registration
 "API Gateway" --> "Employee Service" : ASK Requests
