@@ -49,6 +49,7 @@ For the Department-Service application, use port 8080, and for its instances, us
         "departmentCode": "IT001"
       }
       ```
+- Swagger http://localhost:8080/swagger-ui/index.html#/
 
 ## Employee-Service
 
