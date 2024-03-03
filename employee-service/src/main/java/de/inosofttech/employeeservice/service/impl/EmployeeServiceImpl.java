@@ -3,6 +3,7 @@ package de.inosofttech.employeeservice.service.impl;
 import de.inosofttech.employeeservice.dto.APIResponseDto;
 import de.inosofttech.employeeservice.dto.DepartmentDto;
 import de.inosofttech.employeeservice.dto.EmployeeDto;
+import de.inosofttech.employeeservice.dto.OrganizationDto;
 import de.inosofttech.employeeservice.entity.Employee;
 import de.inosofttech.employeeservice.mapper.EmployeeMapper;
 import de.inosofttech.employeeservice.repository.EmployeeRepository;
@@ -60,11 +61,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         //DepartmentDto departmentDto = apiClient.getDepartment(employee.getDepartmentCode());
 
+        OrganizationDto organizationDto = webClient.get()
+                .uri("http://localhost:8083/api/organizations/" + employee.getOrganizationCode())
+                .retrieve()
+                .bodyToMono(OrganizationDto.class)
+                .block();
+
         EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
 
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setEmployee(employeeDto);
         apiResponseDto.setDepartment(departmentDto);
+        apiResponseDto.setOrganization(organizationDto);
 
 
         return apiResponseDto;
